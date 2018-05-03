@@ -1,0 +1,143 @@
+// GLOBAL VARIABLES
+$topNav-background-color:   #D2D7D3;
+$middleNav-background-color:  #2c3e50;
+
+$h1-size-small: 18px;
+$li-size-small: 10px;
+
+$medium-width: 768px;
+
+$h1-size-medium: 24px;
+$li-size-medium: 14px;
+
+$img-width-small: 15px;
+$img-height-small: 15px; 
+
+// GLOBAL MIXINS 
+
+@mixin mar-pad($margin: 0, $padding: 0){
+    margin: $margin;
+    padding: $padding;
+    @content;
+}
+
+@mixin hover-state($color: black, $background: white){
+    &:hover{
+        color: $color;
+        background-color: $background;
+        @content;
+    }
+}
+
+// GLOBAL STYLES
+.container{
+    width: 95%;
+    margin: auto;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    @include mar-pad;
+    background-color: #f4f4f4;
+    font-family: 'Quicksand', sans-serif;
+}
+
+h1, p, h2, h3, ul{
+    @include mar-pad;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+// TOP NAV STYLES
+
+#top-nav{
+    color: white;
+    background-color: darken($color: $topNav-background-color, $amount: 28%);
+    padding-bottom: 5px;
+
+
+    a{
+        color: white;
+        display: block;
+        padding: 4px;
+
+        @include hover-state(white, darken($topNav-background-color, 50%)){
+            border-radius: 4px;
+        }
+    }
+
+    h1{
+        margin-left: 4px;
+        padding: 4px 0;
+        font-size: $h1-size-small;
+        @media(min-width: $medium-width){
+            margin-right: 5px;  
+            font-size: $h1-size-medium;
+        }
+    }
+
+    li{
+        font-size: $li-size-small;
+
+        @media(min-width: $medium-width){
+            font-size: $li-size-medium;
+            margin-top: 4px;
+        }
+    }
+}
+
+#top-nav2{
+    @media(min-width: $medium-width){
+        display: flex;
+        align-items: center;
+    }
+}
+
+.nav{
+    display: flex;
+    li:not(:last-child){
+        margin-right: 5px;
+    }
+}
+
+.nav2{
+    display: flex;
+
+    li:not(:last-child){
+        margin-right: 5px;
+    }
+
+    li:first-child{
+        padding: 4px;
+    }
+
+    @media(min-width: $medium-width){
+        margin-left: auto;
+    }
+}
+
+.nav-div{
+    display: flex;
+    justify-content: space-between;
+
+    @media(min-width: $medium-width){
+        flex: 1;
+    }
+}
+
+
+
+
+
+img{
+    width: 10px;
+}

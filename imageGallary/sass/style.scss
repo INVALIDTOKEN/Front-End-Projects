@@ -1,0 +1,65 @@
+
+
+body{
+    margin : 0px;
+    padding : 0px;
+    background-color: black;
+}
+
+
+.container{
+    width: 40%;
+    margin : 20px auto 20px auto;
+    padding : 5px;
+    background-color: white;
+
+    @media(max-width : 1024px){
+        width : 90%;
+    }
+
+    @media(max-width : 768px){
+        width : 90%;
+    }
+}
+
+img{
+
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position : center;
+}
+
+.all-Images{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap : 5px;
+
+    img:hover{
+        opacity: 0.6;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
